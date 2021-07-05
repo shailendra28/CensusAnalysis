@@ -8,6 +8,9 @@ public class CensusAnalyserTest {
 
     private static final String INDIA_CENSUS_CSV_FILE_PATH = "./src/test/resources/IndiaStateCensusData.csv";
     private static final String WRONG_CSV_FILE_PATH = "./src/main/resources/IndiaStateCensusData.csv";
+    /**
+     * This test case will check the number of entries.
+     */
     @Test
     public void givenIndianCensusCSVFileReturnsCorrectRecords() {
         try {
@@ -16,6 +19,9 @@ public class CensusAnalyserTest {
             Assert.assertEquals(29,numOfRecords);
         } catch (CensusAnalyserException e) { }
     }
+    /**
+     * This test case will check the exception with the wrong path.
+     */
     @Test
     public void givenIndiaCensusData_WithWrongFile_ShouldThrowException() {
         try {
@@ -27,4 +33,5 @@ public class CensusAnalyserTest {
             Assert.assertEquals(CensusAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM,e.type);
         }
     }
+
 }

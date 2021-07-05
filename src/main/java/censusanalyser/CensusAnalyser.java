@@ -10,7 +10,12 @@ import java.nio.file.Paths;
 import java.util.Iterator;
 
 public class CensusAnalyser {
-  
+    /**
+     * This method will load all the datas from csv files.
+     * @param csvFilePath
+     * @return No.of Entries.
+     * @throws CensusAnalyserException
+     */
     public int loadIndiaCensusData(String csvFilePath) throws CensusAnalyserException {
         try {
             Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));
